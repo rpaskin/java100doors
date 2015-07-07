@@ -48,11 +48,23 @@ public class Porta100 implements ActionListener
 			for (int i = 1; i < 101 ; i++) 
 			{
 				if(i == 20 || i == 40 || i == 60 || i == 80 || i == 100){
-					g.fillRect(x, y, 40, 40);
 					if(counterTimes == 1){
 						g.setColor(Color.RED);
 					}
-					else{ g.setColor(Color.BLACK); }
+
+					else if(counterTimes == 2){
+						if(i % 2 == 0){
+							g.setColor(Color.RED); 
+						}else{
+							g.setColor(Color.BLACK);
+						}
+					}
+
+					else{ 
+						g.setColor(Color.BLACK); 
+					}
+					g.fillRect(x, y, 40, 40);
+					
 					x = 30;
 					y = y + 50;
 				} 
@@ -60,7 +72,15 @@ public class Porta100 implements ActionListener
 				{
 					if(counterTimes == 1){
 						g.setColor(Color.RED);
-					} else{
+					} 
+					else if(counterTimes == 2){
+						if(i % 2 == 0){
+							g.setColor(Color.RED); 
+						}else{
+							g.setColor(Color.BLACK);
+						}
+					}
+					else{
 						g.setColor(Color.BLACK);
 					}
 					g.fillRect(x, y, 40, 40);
