@@ -9,6 +9,7 @@ public class Porta100 implements ActionListener
 	JFrame frame = new JFrame("Exercicio de JFrame");
 	JButton button1 = new JButton("Topete");
 	int counterTimes = 0;
+	boolean door;
 
 	public static void main (String[] args)
 	{
@@ -54,8 +55,16 @@ public class Porta100 implements ActionListener
 
 					else if(counterTimes == 2){
 						if(i % 2 == 0){
-							g.setColor(Color.RED); 
+							g.setColor(Color.BLACK); 
 						}else{
+							g.setColor(Color.RED);
+						}
+					} 
+
+					else if(counterTimes == 3){
+						if(i % 2 == 0 && i % 3 == 0){
+							g.setColor(Color.RED);
+						} else if(i % 3 == 0 && i % 2 != 0){
 							g.setColor(Color.BLACK);
 						}
 					}
@@ -64,7 +73,7 @@ public class Porta100 implements ActionListener
 						g.setColor(Color.BLACK); 
 					}
 					g.fillRect(x, y, 40, 40);
-					
+
 					x = 30;
 					y = y + 50;
 				} 
@@ -75,8 +84,16 @@ public class Porta100 implements ActionListener
 					} 
 					else if(counterTimes == 2){
 						if(i % 2 == 0){
-							g.setColor(Color.RED); 
+							g.setColor(Color.BLACK); 
 						}else{
+							g.setColor(Color.RED); 
+						}
+					}
+
+					else if(counterTimes == 3){
+						if(i % 2 == 0 && i % 3 == 0){
+							g.setColor(Color.RED);
+						} else if(i % 3 == 0 && i % 2 != 0){
 							g.setColor(Color.BLACK);
 						}
 					}
@@ -84,7 +101,7 @@ public class Porta100 implements ActionListener
 						g.setColor(Color.BLACK);
 					}
 					g.fillRect(x, y, 40, 40);
-					x = x + 41;		
+					x = x + 41;
 				}
 			}
 
@@ -93,7 +110,7 @@ public class Porta100 implements ActionListener
 				// Vai de 2 em 2, mudando o estado dela
 			}
 
-			else if(counterTimes == 3){
+			else ward if(counterTimes == 3){
 				// De 3 em 3, muda o estado da porta
 			}*/
 		}
