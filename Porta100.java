@@ -32,35 +32,50 @@ public class Porta100 implements ActionListener
 
 	public 	void actionPerformed(ActionEvent e)
 	{
-		frame.repaint();
-
-
-	}
-	
+		if(e.getSource()==button1){
+			counterTimes++;
+			frame.repaint();
+		}
+	}	
 
 	class MyDrawPanel extends JPanel
 	{
 		public void paintComponent(Graphics g)
 		{
-
 			int x = 30;
-			int y = 50;
+			int y = 0;
 
 			for (int i = 1; i < 101 ; i++) 
 			{
 				if(i == 20 || i == 40 || i == 60 || i == 80 || i == 100){
 					g.fillRect(x, y, 40, 40);
-					g.setColor(Color.BLACK);
+					if(counterTimes == 1){
+						g.setColor(Color.RED);
+					}
+					else{ g.setColor(Color.BLACK); }
 					x = 30;
 					y = y + 50;
 				} 
 				else 
 				{
+					if(counterTimes == 1){
+						g.setColor(Color.RED);
+					} else{
+						g.setColor(Color.BLACK);
+					}
 					g.fillRect(x, y, 40, 40);
-					g.setColor(Color.BLACK);
 					x = x + 41;		
 				}
 			}
+
+
+			/*else if(counterTimes == 2){
+				// Vai de 2 em 2, mudando o estado dela
+			}
+
+			else if(counterTimes == 3){
+				// De 3 em 3, muda o estado da porta
+			}*/
 		}
 	}
 }
