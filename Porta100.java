@@ -48,71 +48,43 @@ public class Porta100 implements ActionListener
 
 			for (int i = 1; i < 101 ; i++) 
 			{
+				boolean aberta = false;
+
+				if(counterTimes == 1){
+					aberta = true;
+				}
+				else if(counterTimes == 2){
+					if(i % 2 != 0){
+						aberta = true;
+					}
+				}
+				else if(counterTimes == 3){
+					if(i % 2 != 0){
+						aberta = true;
+					}
+					if(i % 3 == 0){
+						aberta = !aberta;
+					}
+				}
+
+				if (aberta){
+					g.setColor(Color.RED);						
+				}
+				else {
+					g.setColor(Color.BLACK);					
+				}
+
+				g.fillRect(x, y, 40, 40);
+
 				if(i == 20 || i == 40 || i == 60 || i == 80 || i == 100){
-					if(counterTimes == 1){
-						g.setColor(Color.RED);
-					}
-
-					else if(counterTimes == 2){
-						if(i % 2 == 0){
-							g.setColor(Color.BLACK); 
-						}else{
-							g.setColor(Color.RED);
-						}
-					} 
-
-					else if(counterTimes == 3){
-						if(i % 2 == 0 && i % 3 == 0){
-							g.setColor(Color.RED);
-						} else if(i % 3 == 0 && i % 2 != 0){
-							g.setColor(Color.BLACK);
-						}
-					}
-
-					else{ 
-						g.setColor(Color.BLACK); 
-					}
-					g.fillRect(x, y, 40, 40);
-
 					x = 30;
 					y = y + 50;
 				} 
 				else 
 				{
-					if(counterTimes == 1){
-						g.setColor(Color.RED);
-					} 
-					else if(counterTimes == 2){
-						if(i % 2 == 0){
-							g.setColor(Color.BLACK); 
-						}else{
-							g.setColor(Color.RED); 
-						}
-					}
-
-					else if(counterTimes == 3){
-						if(i % 2 == 0 && i % 3 == 0){
-							g.setColor(Color.RED);
-						} else if(i % 3 == 0 && i % 2 != 0){
-							g.setColor(Color.BLACK);
-						}
-					}
-					else{
-						g.setColor(Color.BLACK);
-					}
-					g.fillRect(x, y, 40, 40);
 					x = x + 41;
 				}
 			}
-
-
-			/*else if(counterTimes == 2){
-				// Vai de 2 em 2, mudando o estado dela
 			}
-
-			else ward if(counterTimes == 3){
-				// De 3 em 3, muda o estado da porta
-			}*/
-		}
 	}
 }
